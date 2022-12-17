@@ -19,12 +19,14 @@ module.exports.createSession = function(request,response){
     console.log("startup Signed In");
     if(request.user.email == "riya@cred.com")
         return response.redirect('/startup_db');
-    return response.redirect('/');
+    return response.redirect('/startup_db');
 }
 
 // ======= sign out ==============
-module.exports.destroySession = function(request,response){
-    //given to request by passport
-    request.logout();
-    return response.redirect('/');
+module.exports.destroySession = function (req, res) {
+    //req.logout() is used for logout
+    req.logout(function (err) {
+        if (err) { return next(err); }
+    });
+    return res.redirect('/');
 }
