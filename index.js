@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require("dotenv")
-const port = 6500;
+const port = process.env.PORT || 6500;
 const app=express();
 const db = require('./config/mongoose');
 const passport = require('passport');
@@ -40,7 +40,7 @@ app.use(session({
     },
     store: MongoStore.create(
         {
-            mongoUrl: `mongodb://localhost/C`,
+            mongoUrl: `mongodb+srv://Harsh:Hackathon@cluster0.rb7ly7l.mongodb.net/Catalyst?retryWrites=true&w=majority`,
             autoRemove: 'disabled'
         },
         function(err){

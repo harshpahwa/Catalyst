@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/Catalyst');
+mongoose.connect('mongodb+srv://Harsh:Hackathon@cluster0.rb7ly7l.mongodb.net/Catalyst?retryWrites=true&w=majority');
 
 
 const db = mongoose.connection;
